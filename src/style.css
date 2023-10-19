@@ -2,6 +2,26 @@ body {
   margin: 0;
 }
 
+@media screen and (min-width: 751px) {
+  .media-sp {
+    display: none;
+  }
+
+  .media-pc {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .media-sp {
+    display: block;
+  }
+
+  .media-pc {
+    display: none;
+  }
+}
+
 a {
   color: currentColor;
   text-decoration: none;
