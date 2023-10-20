@@ -91,7 +91,7 @@ export default class World extends kokomi.Component {
     this.slider?.dd.enable();
   }
   get isAtDetailPage() {
-    return this.currentActiveMesh;
+    return !!this.currentActiveMesh;
   }
   openMenu() {
     if (this.isAnimatingMenu) {
