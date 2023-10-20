@@ -32,6 +32,7 @@ export default class World extends kokomi.Component {
       this.handleSliderDetail();
       this.handleAbout();
       this.createBlinkMenu();
+      this.handleEffectSwitch();
     });
   }
   showDetail() {
@@ -70,6 +71,12 @@ export default class World extends kokomi.Component {
   }
   hideReturnHint() {
     document.querySelector(".return-hint")?.classList.add("hollow");
+  }
+  showEffectSwitch() {
+    document.querySelector(".effect-switch")?.classList.remove("hollow");
+  }
+  hideEffectSwitch() {
+    document.querySelector(".effect-switch")?.classList.add("hollow");
   }
   handleAbout() {
     document.querySelector(".about-link")?.addEventListener("click", () => {
@@ -192,6 +199,7 @@ export default class World extends kokomi.Component {
         if (!this.currentActiveMesh) {
           this.disableSlider();
           this.hideInteractHint();
+          this.hideEffectSwitch();
 
           otherMakus?.forEach((item) => {
             const material = item.mesh.material as THREE.ShaderMaterial;
@@ -246,6 +254,7 @@ export default class World extends kokomi.Component {
               if (that.currentActiveMesh) {
                 that.enableSlider();
                 that.showInteractHint();
+                that.showEffectSwitch();
 
                 that.currentActiveMesh = null;
               }
@@ -308,5 +317,23 @@ export default class World extends kokomi.Component {
       { opacity: 1 },
       { opacity: 0, duration: 0.6, ease: "power2.out" }
     );
+  }
+  turnOnEffect() {
+    this.emit("change-effect", "basic");
+  }
+  turnOffEffect() {
+    this.emit("change-effect", "lowMotion");
+  }
+  handleEffectSwitch() {
+    document
+      .querySelector(".effect-switch-input")
+      ?.addEventListener("change", (e) => {
+        const target = e.target as HTMLInputElement;
+        if (target.checked) {
+          this.turnOffEffect();
+        } else {
+          this.turnOnEffect();
+        }
+      });
   }
 }

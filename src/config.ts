@@ -115,4 +115,19 @@ const config = {
   ],
 };
 
-export { config };
+const effectConfig = {
+  basic: {
+    rippleStrength: 1,
+    RGBShiftStrength: 1,
+    distortX: 1.2,
+    distortZ: 1.6,
+  },
+  lowMotion: {
+    rippleStrength: 0,
+    RGBShiftStrength: 0,
+    distortX: 0,
+    distortZ: 0,
+  },
+};
+
+export { config, effectConfig };

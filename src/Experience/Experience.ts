@@ -8,7 +8,7 @@ import Debug from "./Debug";
 import Postprocessing from "./Postprocessing";
 
 import { resources } from "./resources";
-import { config } from "../config";
+import { config, effectConfig } from "../config";
 
 export default class Experience extends kokomi.Base {
   params;
@@ -61,6 +61,10 @@ export default class Experience extends kokomi.Base {
       }
     });
 
+    this.world.on("change-effect", (type: any) => {
+      this.changeEffectConfig(type);
+    });
+
     this.createDebug();
   }
   setBgColor(val: string) {
@@ -80,6 +84,22 @@ export default class Experience extends kokomi.Base {
       debugFolder.addColor(params, "bgColor").onChange((val: string) => {
         this.setBgColor(val);
       });
+    }
+  }
+  changeEffectConfig(type: "basic" | "lowMotion" = "basic") {
+    const targetConfig = effectConfig[type];
+
+    const ceMaterial = this.postprocessing?.ce.customPass.material;
+    if (ceMaterial) {
+      ceMaterial.uniforms.uRippleStrength.value = targetConfig.rippleStrength;
+      ceMaterial.uniforms.uRGBShiftStrength.value =
+        targetConfig.RGBShiftStrength;
+    }
+
+    const igUniformParams = this.world.slider?.uniformParams;
+    if (igUniformParams) {
+      igUniformParams.uDistortX.value = targetConfig.distortX;
+      igUniformParams.uDistortZ.value = targetConfig.distortZ;
     }
   }
 }

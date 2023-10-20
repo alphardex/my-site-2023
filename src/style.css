@@ -159,6 +159,10 @@ a {
   transition: 0.5s;
 }
 
+.effect-switch {
+  transition: 0.5s;
+}
+
 .slide-in-line {
   overflow: hidden;
 }
@@ -203,4 +207,17 @@ a {
 .blink-text-menu .blink-text-menu-item a:hover span .in {
   opacity: 1;
   transform: translateX(0);
+}
+
+.form-switch {
+  --switch-bg: transparent;
+  --switch-ball-bg: white;
+  --switch-checked-ball-bg: white;
+  --switch-border-color: white;
+  --switch-hover-border-color: white;
+  --switch-checked-bg: transparent;
+}
+
+.form-switch:checked {
+  --switch-border-color: white;
 }
