@@ -14,6 +14,8 @@ uniform float uRGBShift;
 uniform vec3 uBgColor;
 uniform float uMaskStrength;
 uniform sampler2D uDisplacement;
+uniform float uRippleStrength;
+uniform float uRGBShiftStrength;
 
 vec3 grain(vec2 uv,vec3 col){
     float noise=random(uv+iTime);
@@ -51,14 +53,14 @@ vec2 distort(vec2 p,sampler2D tex){
     vec4 displacement=texture(tex,p);
     float theta=displacement.x*2.*PI;
     vec2 dir=vec2(sin(theta),cos(theta));
-    vec2 dp=p+dir*displacement.x*.1;
+    vec2 dp=p+dir*displacement.x*.1*uRippleStrength;
     return dp;
 }
 
 void main(){
     vec2 uv=vUv;
     uv=distort(uv,uDisplacement);
-    vec4 tex=RGBShift(tDiffuse,uv,uRGBShift*.75);
+    vec4 tex=RGBShift(tDiffuse,uv,uRGBShift*.75*uRGBShiftStrength);
     vec3 col=tex.xyz;
     col=grain(uv,col);
     col=vignette(uv,col);
