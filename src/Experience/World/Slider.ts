@@ -73,7 +73,7 @@ export default class Slider extends kokomi.Component {
     this.dd = new kokomi.DragDetecter(this.base);
     this.dd.detectDrag();
     this.dd.on("drag", (delta: THREE.Vector2) => {
-      this.ws.scroll.target -= -delta[this.ig.dimensionType] * 1.8;
+      this.ws.scroll.target -= delta[this.ig.dimensionType] * 1.8;
     });
     this.dd.on("dragend", () => {
       const snapTarget = this.ig.snap(this.ws.scroll.target);
@@ -96,7 +96,7 @@ export default class Slider extends kokomi.Component {
   update() {
     this.ws.syncScroll();
     const { current, delta } = this.ws.scroll;
-    this.ig.sync(current);
+    this.ig.sync(-current);
 
     this.ig.iterate((maku) => {
       const material = maku.mesh.material as THREE.ShaderMaterial;
