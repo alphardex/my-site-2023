@@ -8,8 +8,6 @@ link: "https://www.xiamo.fun/"
 description: "一个极简的在线 3D 建模与渲染工具，基于 web 端的 3D 内容创作平台。"
 ---
 
-# 夏末
-
 一个极简的在线 3D 建模与渲染工具，基于 web 端的 3D 内容创作平台，面向创作者，提供 3D 创作全流程功能，实现更简单、易用的高质量创作。
 
 主要技术：three.js、Raymarching

@@ -8,8 +8,6 @@ link: "https://github.com/alphardex/kokomi.js"
 description: "一个基于 three.js 的 3D 框架。"
 ---
 
-# kokomi.js
-
 一个基于 three.js 的 3D 框架。它封装了很多实用的组件，能极大地助力 three.js 的开发。
 
 主要技术：three.js、GLSL

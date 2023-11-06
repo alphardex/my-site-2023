@@ -8,8 +8,6 @@ link: "https://juejin.cn/book/7267462574734573604"
 description: "一个能帮你入门 Shader 编程的小册。"
 ---
 
-# Shader 魔法指南
-
 一个能帮你入门 Shader 编程的小册，从基础案例到项目实战，手把手教你学会 Shader。
 
 章节数：17 小节

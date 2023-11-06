@@ -8,8 +8,6 @@ link: "https://github.com/alphardex/aqua.css"
 description: "一个精致的纯 CSS 框架，没有任何 JS。"
 ---
 
-# aqua.css
-
 一个精致的纯 CSS 框架，没有任何 JS。
 
 主要技术：CSS
