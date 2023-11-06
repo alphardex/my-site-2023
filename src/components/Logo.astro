@@ -1,0 +1,7 @@
+---
+const { class: className = "absolute", ...rest } = Astro.props;
+---
+
+<div class={`${className} top-12 left-15 pointer-events-none`} {...rest}>
+  <div class="text-2xl font-bold text-white select-none">Haobin W.</div>
+</div>

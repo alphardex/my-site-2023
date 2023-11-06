@@ -1,5 +1,11 @@
 const config = {
   bgColor: "#202027",
+  gallery: [
+    { id: "3", url: "./textures/shader-book.png" },
+    { id: "2", url: "./textures/xiamo.png" },
+    { id: "1", url: "./textures/kokomijs.png" },
+    { id: "4", url: "./textures/aquacss.png" },
+  ],
   details: [
     {
       name: "kokomi.js",
@@ -113,6 +119,28 @@ const config = {
       ],
     },
   ],
+  about: {
+    desc: [
+      "我的名字是王浩彬，常用网名是 alphardex 。",
+      "我是一位中国的前端开发工程师，主要擅长的技术是 WebGL、three.js、",
+      "Shader。平时喜欢用 Shader 来进行各种创意编程相关的开发，这个网站就",
+      "是一个很好的例子。希望有朝一日能创造出全世界最酷的网站（大雾）。",
+      "同时，我也是一个资深二次元宅，平时喜欢追番、玩主机游戏、收集美少女",
+      "插画、本子等。最喜欢的动画有《孤独摇滚》、《少女歌剧》等，最喜欢的",
+      "游戏有《异度神剑》系列、《艾尔登法环》、《原神》等。",
+      "很高兴能认识你！",
+      "（PS：如果不适应该网站的特效，可以点击右下角的开关关闭它）",
+    ],
+    socialLinks: [
+      { name: "Github", url: "https://github.com/alphardex/" },
+      { name: "Juejin", url: "https://juejin.cn/user/4353721774401623" },
+      { name: "CodePen", url: "https://codepen.io/alphardex" },
+      { name: "Twitter", url: "https://twitter.com/alphardex007" },
+      { name: "Bangumi", url: "https://bangumi.tv/user/399538" },
+      { name: "Email", url: "mailto:2582347430@qq.com" },
+      { name: "RSS", url: "https://haobinwang-2023.netlify.app/rss.xml" },
+    ],
+  },
 };
 
 const effectConfig = {

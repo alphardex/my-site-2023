@@ -1,0 +1,35 @@
+---
+import "@alphardex/aqua.css/dist/aqua.min.css";
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="本站点是创意前端工程师——王浩彬的项目作品集。"
+    />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="shortcut icon" href="/logo.ico" type="image/x-icon" />
+    <link
+      rel="alternate"
+      href="/rss.xml"
+      type="application/rss+xml"
+      title="Portfolio of Haobin Wang"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+<style is:global></style>

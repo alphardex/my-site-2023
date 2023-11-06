@@ -1,0 +1,166 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Loader from "../components/Loader.astro";
+import Logo from "../components/Logo.astro";
+import Mobile from "../components/Mobile.astro";
+
+import { config } from "../config";
+---
+
+<Layout title="Haobin Wang - 创意前端开发工程师">
+  <main>
+    <div class="media-pc">
+      <div id="sketch"></div>
+      <Loader loaderBg={config.bgColor} />
+      <div class="gallery">
+        {
+          config.gallery.map((item) => (
+            <img
+              class="gallery-item"
+              src={item.url}
+              crossorigin="anonymous"
+              alt=""
+              data-entry-id={item.id}
+            />
+          ))
+        }
+      </div>
+      <Logo class="fixed z-4" />
+      <div
+        class="interact-hint fixed z-4 bottom-12 left-15 pointer-events-none"
+      >
+        <div class="text-white select-none">Scroll or Drag</div>
+      </div>
+      <div class="effect-switch fixed z-4 bottom-12 right-15">
+        <div class="form-check">
+          <input
+            type="checkbox"
+            name="effect"
+            class="effect-switch-input form-switch"
+            id="anime"
+          />
+          <label class="form-check-label text-white" for="anime">
+            No Distort
+          </label>
+        </div>
+      </div>
+      <div
+        class="return-hint fixed z-4 bottom-12 left-15 pointer-events-none hollow"
+      >
+        <div class="text-white">←</div>
+      </div>
+      <div class="fixed z-4 top-12 right-15 cursor-pointer">
+        <div class="about-link">
+          <text-flash>
+            <div class="text-white select-none">ABOUT</div>
+          </text-flash>
+        </div>
+      </div>
+      <div
+        class="detail absolute z-4 top-0 left-0 cover pointer-events-none hollow"
+      >
+        <div class="absolute top-34 left-15 pointer-events-auto">
+          <div class="flex flex-col space-y-6 max-w-90 text-white text-lg">
+            <div
+              class="detail-text flex flex-col space-y-6 leading-relaxed whitespace-no-wrap"
+            >
+              <div class="slide-in-line">
+                <div class="slide-in-line-child"></div>
+              </div>
+            </div>
+            <div>
+              <a
+                class="detail-link"
+                href="https://github.com/alphardex"
+                target="_blank"
+              >
+                <text-flash>
+                  <div class="slide-in-line">
+                    <div class="slide-in-line-child">查看详情</div>
+                  </div>
+                </text-flash>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="absolute top-10 pointer-events-auto" style="left: 33rem;">
+          <div class="slide-in-line">
+            <div class="slide-in-line-child">
+              <div class="detail-title text-4xl font-bold text-white">
+                kokomi.js
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <curve-mask></curve-mask>
+      <div class="about-page absolute z-5 top-0 left-0 cover hollow">
+        <div class="absolute top-12 right-15 cursor-pointer">
+          <div class="about-return-link">
+            <text-flash>
+              <div class="text-white select-none">RETURN</div>
+            </text-flash>
+          </div>
+        </div>
+        <Logo />
+        <div class="absolute hv-center">
+          <div class="space-y-6 text-white" style="max-width: 42rem;">
+            <div class="text-xl leading-loose whitespace-no-wrap">
+              {
+                config.about.desc.map((item) => (
+                  <div class="slide-in-line">
+                    <div class="slide-in-line-child">{item}</div>
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+        <div class="absolute bottom-12 left-15">
+          <ul class="text-white space-y-1">
+            {
+              config.about.socialLinks.map((item) => (
+                <li>
+                  <a href={item.url} target="_blank">
+                    <text-blink text={item.name} />
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+        <div class="absolute bottom-12 right-15">
+          <div class="text-sm text-white space-y-1">
+            <div>©2023 By alphardex</div>
+            <div>
+              <a
+                target="_blank"
+                href="https://icons8.com/icon/64794/source-code">Code</a
+              > icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="media-sp">
+      <Mobile />
+    </div>
+  </main>
+</Layout>
+
+<style define:vars={{ bgColor: config.bgColor }}>
+  main {
+    background: var(--bgColor);
+  }
+</style>
+
+<script>
+  import Experience from "../Experience/Experience";
+
+  // @ts-ignore
+  import { register } from "nijika";
+
+  register();
+
+  new Experience("#sketch");
+</script>

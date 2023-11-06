@@ -1,0 +1,113 @@
+body {
+  margin: 0;
+}
+
+@media screen and (min-width: 751px) {
+  .media-sp {
+    display: none;
+  }
+
+  .media-pc {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .media-sp {
+    display: block;
+  }
+
+  .media-pc {
+    display: none;
+  }
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.hollow {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#sketch {
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  overflow: hidden;
+  transition: 0.6s ease-in-out;
+}
+
+#sketch {
+  position: fixed;
+  z-index: 2;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: black;
+}
+
+.gallery {
+  position: relative;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.gallery .gallery-item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* width: 48rem;
+  height: 27rem; */
+  width: 50vw;
+  height: 60vh;
+  opacity: 0;
+}
+
+.slide-in-line {
+  overflow: hidden;
+}
+
+.detail {
+  transition: 0.5s;
+}
+
+.interact-hint {
+  transition: 0.5s;
+}
+
+.return-hint {
+  transition: 0.5s;
+}
+
+.about-page {
+  transition: 0.5s;
+}
+
+.effect-switch {
+  transition: 0.5s;
+}
+
+.form-switch {
+  --switch-bg: transparent;
+  --switch-ball-bg: white;
+  --switch-checked-ball-bg: white;
+  --switch-border-color: white;
+  --switch-hover-border-color: white;
+  --switch-checked-bg: transparent;
+}
+
+.form-switch:checked {
+  --switch-border-color: white;
+}

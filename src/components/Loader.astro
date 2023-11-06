@@ -1,0 +1,57 @@
+---
+interface Props {
+  loaderBg?: string;
+}
+
+const { loaderBg = "black" } = Astro.props;
+---
+
+<div class="loader-screen">
+  <div class="loading-container">
+    <div class="loading">
+      <span style="--i: 0">L</span>
+      <span style="--i: 1">O</span>
+      <span style="--i: 2">A</span>
+      <span style="--i: 3">D</span>
+      <span style="--i: 4">I</span>
+      <span style="--i: 5">N</span>
+      <span style="--i: 6">G</span>
+    </div>
+  </div>
+</div>
+
+<style define:vars={{ loaderBg }}>
+  .loader-screen {
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    transition: 0.6s ease-in-out;
+    background: var(--loaderBg);
+  }
+
+  .loading-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .loading {
+    color: white;
+    font-size: 1.875rem;
+    letter-spacing: 0.1em;
+  }
+
+  .loading span {
+    animation: blur 1.5s calc(var(--i) / 5 * 1s) alternate infinite;
+  }
+
+  @keyframes blur {
+    to {
+      filter: blur(2px);
+    }
+  }
+</style>
