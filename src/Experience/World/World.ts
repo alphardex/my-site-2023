@@ -196,6 +196,7 @@ export default class World extends kokomi.Component {
     const curveMask = document.querySelector("curve-mask") as any;
     curveMask.addEventListener("open-end", () => {
       document.querySelector(".about-page")?.classList.remove("hollow");
+      this.slideInText(".about-text");
     });
   }
   openMenu() {
