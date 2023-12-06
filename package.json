@@ -12,22 +12,22 @@
   "dependencies": {
     "@alphardex/aqua.css": "^1.7.0",
     "@astrojs/check": "^0.3.1",
-    "@astrojs/rss": "^3.0.0",
-    "astro": "^3.5.2",
+    "@astrojs/rss": "^4.0.0",
+    "astro": "^4.0.2",
     "furina": "^1.0.1",
-    "kokomi.js": "^1.9.88",
+    "kokomi.js": "^1.9.89",
     "lil-gui": "^0.19.1",
     "lygia": "^1.1.3",
     "markdown-it": "^13.0.2",
     "nijika": "^1.0.0",
     "sanitize-html": "^2.11.0",
-    "three": "^0.158.0",
-    "typescript": "^5.2.2"
+    "three": "^0.159.0",
+    "typescript": "^5.3.2"
   },
   "devDependencies": {
-    "@types/markdown-it": "^13.0.6",
-    "@types/sanitize-html": "^2.9.4",
-    "@types/three": "^0.158.2",
-    "vite-plugin-glsl": "^1.1.2"
+    "@types/markdown-it": "^13.0.7",
+    "@types/sanitize-html": "^2.9.5",
+    "@types/three": "^0.159.0",
+    "vite-plugin-glsl": "^1.2.0"
   }
 }
