@@ -132,6 +132,7 @@ const config = {
       "（PS：如果不适应该网站的特效，可以点击右下角的开关关闭它）",
     ],
     socialLinks: [
+      { name: "Blog", url: "https://alphardex.github.io/mygo/" },
       { name: "Github", url: "https://github.com/alphardex/" },
       { name: "Juejin", url: "https://juejin.cn/user/4353721774401623" },
       { name: "CodePen", url: "https://codepen.io/alphardex" },
